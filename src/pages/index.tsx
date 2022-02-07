@@ -1,15 +1,13 @@
-import Link from "next/link";
-import { client } from "../libs/client";
+import Link from 'next/link';
+import { client } from '../libs/client';
 
-export default function Home({ blog }:any) {
+export default function Home({ blog }: any) {
   return (
     <div>
       <ul>
-        {blog.map((blog:any) => (
+        {blog.map((blog: any) => (
           <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
+            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
           </li>
         ))}
       </ul>
@@ -18,7 +16,7 @@ export default function Home({ blog }:any) {
 }
 
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data = await client.get({ endpoint: 'blog' });
 
   return {
     props: {
