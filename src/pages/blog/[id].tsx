@@ -1,11 +1,14 @@
-import { client } from "../../libs/client";
+import { Badge, Typography } from '@supabase/ui';
+import { client } from '../../libs/client';
 
-export default function BlogId({ blog }:any) {
+export default function BlogId({ blog }: any) {
   return (
     <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <p className="category">{blog.category && `${blog.category.name}`}</p>
+      <Typography.Title level={1}>{blog.title}</Typography.Title>
+      <Typography.Text>{blog.publishedAt}</Typography.Text>
+      <Badge color='blue' size='large'>
+        {blog.category && `${blog.category.name}`}
+      </Badge>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
@@ -15,18 +18,16 @@ export default function BlogId({ blog }:any) {
   );
 }
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data = await client.get({ endpoint: 'blog' });
 
-  const paths = data.contents.map((content: { id: any; }) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: { id: any }) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: { params: { id: any; }; }) => {
+export const getStaticProps = async (context: { params: { id: any } }) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", contentId: id });
+  const data = await client.get({ endpoint: 'blog', contentId: id });
 
   return {
     props: {
