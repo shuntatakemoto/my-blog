@@ -22,21 +22,25 @@ export default function Home({ blog, category }: any) {
           (blog: any) =>
             blog.thumbnail && (
               <Link key={blog.id} href={`/blog/${blog.id}`} passHref>
-                <div className='flex my-4 w-full cursor-pointer'>
-                  <Image
-                    key={blog.id}
-                    src={`${JSON.stringify(blog.thumbnail.url).replace(/"/g, '')}`}
-                    alt=''
-                    width='144'
-                    height='144'
-                    objectFit='cover'
-                  />
-                  <div className='pl-4'>
-                    <p>{blog.createdAt}</p>
-                    <p className='py-4 text-2xl font-bold'>{blog.title}</p>
-                    <p>{blog.subTitle}</p>
+                <div className='flex py-4 my-4 cursor-pointer'>
+                  <div className='w-1/3 xl:w-1/6'>
+                    <Image
+                      key={blog.id}
+                      src={`${JSON.stringify(blog.thumbnail.url).replace(/"/g, '')}`}
+                      alt=''
+                      width='120'
+                      height='120'
+                      objectFit='cover'
+                    />
                   </div>
-                  {console.log(blog)}
+                  <div className='pl-4 w-2/3 xl:w-5/6'>
+                    <p className='flex'>{new Date(blog.createdAt).toLocaleDateString()}</p>
+                    <p className='pt-1 text-2xl font-bold xl:pt-2'>{blog.title}</p>
+                    <p className='py-1 xl:py-2'>{blog.subTitle}</p>
+                    <Badge color={blog.category.color} size='large'>
+                      {blog.category.name}
+                    </Badge>
+                  </div>
                 </div>
               </Link>
             ),
