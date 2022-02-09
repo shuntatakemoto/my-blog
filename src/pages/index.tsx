@@ -31,6 +31,7 @@ export default function Home({ blog, category }: any) {
                       width='120'
                       height='120'
                       objectFit='cover'
+                      className='rounded-md'
                     />
                   </div>
                   <div className='pl-4 w-2/3 xl:w-5/6'>
