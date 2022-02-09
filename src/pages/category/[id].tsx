@@ -1,8 +1,13 @@
 import { Badge } from '@supabase/ui';
+import { Blog, Category } from 'api/types';
 import { Card } from '~/components/Card';
 import { client } from '~/libs/client';
 
-export default function CategoryId({ blog }: any) {
+type Props = {
+  blog: Blog[];
+};
+
+export default function CategoryId({ blog }: Props) {
   if (blog.length === 0) {
     return <div>ブログコンテンツがありません</div>;
   }
@@ -22,11 +27,11 @@ export default function CategoryId({ blog }: any) {
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'categories' });
 
-  const paths = data.contents.map((content: any) => `/category/${content.id}`);
+  const paths = data.contents.map((content: Category) => `/category/${content.id}`);
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async (context: Category) => {
   const id = context.params.id;
   const data = await client.get({
     endpoint: 'blog',

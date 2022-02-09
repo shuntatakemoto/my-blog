@@ -1,13 +1,21 @@
 import { Badge } from '@supabase/ui';
 import Link from 'next/link';
+import { Blog, Category } from 'api/types';
 import { Card } from '~/components/Card';
 import { client } from '~/libs/client';
 
-export default function Home({ blog, category }: any) {
+type Props = {
+  blog: Blog[];
+  category: Category[];
+};
+
+export default function Home({ blog, category }: Props) {
   return (
     <>
       <div className='flex'>
-        {category.map((category: any) => (
+        {console.log('blog', blog)}
+        {console.log('category', category)}
+        {category.map((category: Category) => (
           <Link key={category.id} href={`/category/${category.id}`} passHref>
             <div className='my-8 mx-1 cursor-pointer'>
               <Badge color={category.color} size='large'>

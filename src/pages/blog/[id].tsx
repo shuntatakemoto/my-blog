@@ -1,9 +1,14 @@
 import { Badge } from '@supabase/ui';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Blog } from 'api/types';
 import { client } from '~/libs/client';
 
-export default function BlogId({ blog }: any) {
+type Props = {
+  blog: Blog;
+};
+
+export default function BlogId({ blog }: Props) {
   return (
     <main className='pt-8'>
       <h1 className='py-2 text-3xl font-bold'>{blog.title}</h1>
@@ -38,11 +43,11 @@ export default function BlogId({ blog }: any) {
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' });
 
-  const paths = data.contents.map((content: { id: any }) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: Blog) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: { params: { id: any } }) => {
+export const getStaticProps = async (context: { params: Blog }) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: 'blog', contentId: id });
 

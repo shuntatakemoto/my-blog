@@ -18,6 +18,7 @@
     "paths": {
       "~/components/*": ["components/*"],
       "~/libs/*": ["libs/*"],
+      "~/api/*": ["api/*"],
       "~/styles/*": ["styles/*"],
       "~/public/*": ["../public/*"]
     }

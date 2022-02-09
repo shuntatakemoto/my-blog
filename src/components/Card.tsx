@@ -1,16 +1,17 @@
 import { Badge } from '@supabase/ui';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Blog } from 'api/types';
 
 type Props = {
-  blog: any;
+  blog: Blog[];
 };
 
 export const Card = ({ blog }: Props) => {
   return (
-    <div className=''>
+    <div>
       {blog.map(
-        (blog: any) =>
+        (blog: Blog) =>
           blog.thumbnail && (
             <Link key={blog.id} href={`/blog/${blog.id}`} passHref>
               <div className='flex py-4 my-4 cursor-pointer'>
