@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import { client } from '../../libs/client';
+import { Badge } from '@supabase/ui';
+import { Card } from '~/components/Card';
+import { client } from '~/libs/client';
 
 export default function CategoryId({ blog }: any) {
   if (blog.length === 0) {
@@ -7,14 +8,13 @@ export default function CategoryId({ blog }: any) {
   }
   return (
     <div>
-      <ul>
-        {console.log(blog.title)}
-        {blog.map((blog: any) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <p>
+        <Badge color={blog[0].category.color} size='large'>
+          {blog[0].category.name}
+        </Badge>
+        &nbsp;の記事一覧
+      </p>
+      <Card blog={blog} />
     </div>
   );
 }
