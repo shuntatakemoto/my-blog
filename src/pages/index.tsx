@@ -13,8 +13,6 @@ export default function Home({ blog, category }: Props) {
   return (
     <>
       <div className='flex'>
-        {console.log('blog', blog)}
-        {console.log('category', category)}
         {category.map((category: Category) => (
           <Link key={category.id} href={`/category/${category.id}`} passHref>
             <div className='my-8 mx-1 cursor-pointer'>
