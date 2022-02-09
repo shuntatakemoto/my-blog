@@ -11,7 +11,7 @@ export const Footer: VFC = () => {
         <a href='https://twitter.com/haruta_8_' target='_blank' rel='noopener noreferrer'>
           <IconTwitter />
         </a>
-        <a href='https://www.haruta-8.dev/' target='_blank' rel='noopener noreferrer'>
+        <a href='https://www.haruta-8.dev/#/about' target='_blank' rel='noopener noreferrer'>
           <IconInfo />
         </a>
       </div>
