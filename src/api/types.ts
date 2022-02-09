@@ -22,10 +22,6 @@ interface Params extends ParsedUrlQuery {
   id: string;
 }
 
-// export type Params = {
-//   id: string;
-// };
-
 export type Category = {
   id: string;
   name: string;
