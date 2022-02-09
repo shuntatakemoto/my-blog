@@ -9,7 +9,7 @@ export const Header: VFC = () => {
         <Link href='/'>Take It Easy!</Link>
       </h1>
       <a href='https://twitter.com/haruta_8_' target='_blank' rel='noopener noreferrer'>
-        <Image src='/haruta.png' alt='haruta-image' width='72' height='72' />
+        <Image src='/haruta.png' alt='haruta-image' width='72' height='72' quality='10' />
       </a>
     </header>
   );
