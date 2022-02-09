@@ -6,7 +6,7 @@ import { client } from '~/libs/client';
 export default function BlogId({ blog }: any) {
   return (
     <main className='pt-8'>
-      <h1 className='py-2 font-mono text-3xl font-bold'>{blog.title}</h1>
+      <h1 className='py-2 text-3xl font-bold'>{blog.title}</h1>
       <div className='flex'>
         <p className='py-2 pr-4'>{new Date(blog.publishedAt).toLocaleDateString()}</p>
         <Link href={`/category/${blog.category.id}`} passHref>
