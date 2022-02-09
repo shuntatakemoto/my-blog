@@ -5,17 +5,17 @@ import { Header } from '~/components/Header';
 
 type Props = {
   children: ReactNode;
-  title: string;
-  description: string;
-  image: string;
+  title?: string;
+  description?: string;
+  image?: string;
 };
 
-export const Layout: VFC<Props> = ({
+export const Layout = ({
   children,
   title = 'Take It Easy!',
   description = "HARUTA's Blog",
   image = 'https://haruta-blog.vercel.app/default.png',
-}) => (
+}: Props) => (
   <>
     <Head>
       <title>{title}</title>
