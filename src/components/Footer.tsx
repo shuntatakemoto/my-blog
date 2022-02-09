@@ -4,7 +4,7 @@ import type { VFC } from 'react';
 export const Footer: VFC = () => {
   return (
     <footer className='pt-24 mt-auto mb-4 text-center bg-gray-100'>
-      <div className='flex justify-between py-4 mx-auto w-1/3'>
+      <div className='flex justify-between py-4 pb-8 mx-auto w-1/3'>
         <a href='https://github.com/shuntatakemoto' target='_blank' rel='noopener noreferrer'>
           <IconGitHub />
         </a>
