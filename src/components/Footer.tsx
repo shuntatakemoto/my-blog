@@ -16,7 +16,7 @@ export const Footer: VFC = () => {
         </a>
       </div>
 
-      <small>© 2022 haruta_8_ | This site uses Google Analytics.</small>
+      <small>© 2022 HARUTA | This site uses Google Analytics.</small>
     </footer>
   );
 };
