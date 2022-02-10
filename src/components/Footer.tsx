@@ -1,4 +1,4 @@
-import { IconGitHub, IconTwitter, IconInfo } from '@supabase/ui';
+import { IconGitHub, IconTwitter, IconLink } from '@supabase/ui';
 import type { VFC } from 'react';
 
 export const Footer: VFC = () => {
@@ -12,11 +12,11 @@ export const Footer: VFC = () => {
           <IconTwitter />
         </a>
         <a href='https://www.haruta-8.dev/#/about' target='_blank' rel='noopener noreferrer'>
-          <IconInfo />
+          <IconLink />
         </a>
       </div>
 
-      <small>© 2022 haruta_8_</small>
+      <small>© 2022 haruta_8_ | This site uses Google Analytics.</small>
     </footer>
   );
 };
