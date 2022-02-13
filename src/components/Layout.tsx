@@ -35,7 +35,7 @@ export const Layout = ({
 
     <div className='flex flex-col px-4 mx-auto w-full min-h-screen bg-gray-100 sm:w-1/2'>
       <Header />
-      <main className=''>{children}</main>
+      <main className='flex-1'>{children}</main>
       <Footer />
     </div>
   </>
