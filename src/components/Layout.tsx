@@ -26,7 +26,7 @@ export const Layout = ({
       <meta name='twitter:site' content='@haruta_8_' />
       <meta name='twitter:creator' content='@haruta_8_' />
       <meta name='twitter:image' content={image} />
-      <meta property='og:url' content='https://food-invite.vercel.app/' />
+      <meta property='og:url' content='https://haruta-blog.vercel.app/' />
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
       <meta property='og:image' content={image} />
