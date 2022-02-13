@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import '~/styles/global.css';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import { Layout } from '~/components/Layout';
 import { GA_TRACKING_ID, pageview } from '~/libs/gtag';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -19,11 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
