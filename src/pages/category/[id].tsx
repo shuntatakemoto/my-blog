@@ -1,6 +1,7 @@
 import { Badge } from '@supabase/ui';
 import { Blog, Category } from 'api/types';
 import { Card } from '~/components/Card';
+import { Layout } from '~/components/Layout';
 import { client } from '~/libs/client';
 
 type Props = {
@@ -12,7 +13,7 @@ export default function CategoryId({ blog }: Props) {
     return <div>ブログコンテンツがありません</div>;
   }
   return (
-    <div>
+    <Layout>
       <p>
         <Badge color={blog[0].category.color} size='large'>
           {blog[0].category.name}
@@ -20,7 +21,7 @@ export default function CategoryId({ blog }: Props) {
         &nbsp;の記事一覧
       </p>
       <Card blog={blog} />
-    </div>
+    </Layout>
   );
 }
 

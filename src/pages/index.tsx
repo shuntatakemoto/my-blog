@@ -2,6 +2,7 @@ import { Badge } from '@supabase/ui';
 import Link from 'next/link';
 import { Blog, Category } from 'api/types';
 import { Card } from '~/components/Card';
+import { Layout } from '~/components/Layout';
 import { client } from '~/libs/client';
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
 
 export default function Home({ blog, category }: Props) {
   return (
-    <>
+    <Layout>
       <div className='flex'>
         {category.map((category: Category) => (
           <Link key={category.id} href={`/category/${category.id}`} passHref>
@@ -24,7 +25,7 @@ export default function Home({ blog, category }: Props) {
         ))}
       </div>
       <Card blog={blog} />
-    </>
+    </Layout>
   );
 }
 
