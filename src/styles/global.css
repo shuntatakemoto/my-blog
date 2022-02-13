@@ -1,7 +1,7 @@
 /* support iOS */
-/* html {
+html {
   height: -webkit-fill-available;
-} */
+}
 
 body {
   min-height: 100vh;
