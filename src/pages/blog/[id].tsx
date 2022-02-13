@@ -2,6 +2,7 @@ import { Badge } from '@supabase/ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Blog } from 'api/types';
+import { createOgImage } from '~/components/CustomImage';
 import { Layout } from '~/components/Layout';
 import { client } from '~/libs/client';
 
@@ -10,8 +11,11 @@ type Props = {
 };
 
 export default function BlogId({ blog }: Props) {
+  const { ogImageUrl } = createOgImage(blog.ogpImage.url, blog.title);
+  console.log('ogImageUrl', ogImageUrl);
+
   return (
-    <Layout>
+    <Layout image={ogImageUrl}>
       <main className='pt-8'>
         <h1 className='py-2 text-3xl font-bold'>{blog.title}</h1>
         <div className='flex'>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { ParsedUrlQuery } from 'node:querystring';
 
 export type Blog = {
@@ -12,9 +13,14 @@ export type Blog = {
   revisedAt?: string | number | Date;
   updatedAt?: string | number | Date;
   params: Params;
+  ogpImage: OgpImage;
 };
 
 export type Thumbnail = {
+  url: string;
+};
+
+export type OgpImage = {
   url: string;
 };
 
