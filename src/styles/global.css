@@ -10,13 +10,13 @@
 }
 
 /* support iOS */
-/* html {
+html {
   height: -webkit-fill-available;
-} */
+}
 
 body {
-  /* min-height: 100vh;
-  min-height: -webkit-fill-available; */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
