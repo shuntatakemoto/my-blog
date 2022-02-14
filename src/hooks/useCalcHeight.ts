@@ -17,6 +17,5 @@ export const useCalcHeight = () => {
     setFillHeight();
   });
 
-  // 初期化
   setFillHeight();
 };
