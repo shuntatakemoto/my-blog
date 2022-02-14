@@ -1,18 +1,27 @@
-/* support iOS */
-html {
-  height: -webkit-fill-available;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* .support-ios {
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
+  } */
+  .support-ios {
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
 }
 
+/* support iOS */
+/* html {
+  height: -webkit-fill-available;
+  background-color: brown;
+} */
+
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  /* min-height: 100vh;
+  min-height: -webkit-fill-available; */
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
-
-/* footer {
-  position: sticky;
-  position: -webkit-sticky;
-  bottom: 0;
-  background-color: aqua;
-} */

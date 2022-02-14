@@ -1,7 +1,17 @@
 import { IconGitHub, IconTwitter, IconLink } from '@supabase/ui';
 import type { VFC } from 'react';
 
-export const Footer: VFC = () => {
+const Footer: VFC = () => {
+  const setFillHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  // 画面のサイズ変動があった時に高さを再計算する
+  window.addEventListener('resize', setFillHeight);
+
+  // 初期化
+  setFillHeight();
   return (
     <footer className='pt-24 mb-4 text-center bg-gray-100'>
       <div className='flex justify-between py-4 pb-8 mx-auto w-1/3'>
@@ -20,3 +30,5 @@ export const Footer: VFC = () => {
     </footer>
   );
 };
+
+export default Footer;
