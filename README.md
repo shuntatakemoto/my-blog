@@ -5,8 +5,8 @@ Jamstack な[ブログ](https://haruta-blog.vercel.app/)です
 
 ## 使用技術
 
-TypeScript(React(Next.js(Static Generation)))
-microCMS
-Supabase UI
-Tailwind CSS
-Vercel（デプロイ）
+- TypeScript(React(Next.js(Static Generation)))
+- microCMS
+- Supabase UI
+- Tailwind CSS
+- Vercel
