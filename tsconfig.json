@@ -19,6 +19,7 @@
       "~/components/*": ["components/*"],
       "~/libs/*": ["libs/*"],
       "~/api/*": ["api/*"],
+      "~/hooks/*": ["hooks/*"],
       "~/styles/*": ["styles/*"],
       "~/public/*": ["../public/*"]
     }
