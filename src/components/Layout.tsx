@@ -1,7 +1,10 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import type { ReactNode } from 'react';
-import { Footer } from '~/components/Footer';
 import { Header } from '~/components/Header';
+const Footer = dynamic(() => import('./Footer'), {
+  ssr: false,
+});
 
 type Props = {
   children: ReactNode;
@@ -26,16 +29,16 @@ export const Layout = ({
       <meta name='twitter:site' content='@haruta_8_' />
       <meta name='twitter:creator' content='@haruta_8_' />
       <meta name='twitter:image' content={image} />
-      <meta property='og:url' content='https://food-invite.vercel.app/' />
+      <meta property='og:url' content='https://haruta-blog.vercel.app/' />
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
       <meta property='og:image' content={image} />
       <link rel='icon' href='/favicon.ico' />
     </Head>
 
-    <div className='flex flex-col px-4 mx-auto w-full min-h-screen bg-gray-100 sm:w-1/2'>
+    <div className='flex flex-col px-4 mx-auto w-full bg-gray-100 sm:w-1/2 support-ios'>
       <Header />
-      <main className=''>{children}</main>
+      <main className='flex-1'>{children}</main>
       <Footer />
     </div>
   </>

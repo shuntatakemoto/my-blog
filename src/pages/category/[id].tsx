@@ -10,7 +10,7 @@ type Props = {
 
 export default function CategoryId({ blog }: Props) {
   if (blog.length === 0) {
-    return <div>ブログコンテンツがありません</div>;
+    return <Layout>ブログコンテンツがありません</Layout>;
   }
   return (
     <Layout>

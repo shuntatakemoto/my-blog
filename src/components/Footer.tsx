@@ -1,9 +1,12 @@
 import { IconGitHub, IconTwitter, IconLink } from '@supabase/ui';
 import type { VFC } from 'react';
+import { useCalcHeight } from '~/hooks/useCalcHeight';
 
-export const Footer: VFC = () => {
+const Footer: VFC = () => {
+  useCalcHeight();
+
   return (
-    <footer className='pt-24 mt-auto mb-4 text-center bg-gray-100'>
+    <footer className='pt-24 mb-4 text-center bg-gray-100'>
       <div className='flex justify-between py-4 pb-8 mx-auto w-1/3'>
         <a href='https://github.com/shuntatakemoto' target='_blank' rel='noopener noreferrer'>
           <IconGitHub />
@@ -20,3 +23,5 @@ export const Footer: VFC = () => {
     </footer>
   );
 };
+
+export default Footer;
