@@ -1,11 +1,23 @@
-/* support iOS */
-html {
-  height: -webkit-fill-available;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .support-ios {
+    min-height: -webkit-fill-available;
+    backgroud-color: red;
+    min-height: 100vh;
+  }
 }
 
+/* support iOS */
+/* html {
+  height: -webkit-fill-available;
+} */
+
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  /* min-height: 100vh;
+  min-height: -webkit-fill-available; */
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
