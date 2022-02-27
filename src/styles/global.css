@@ -16,4 +16,5 @@ body {
 a {
   text-decoration-line: underline;
   text-decoration-color: #ec4899;
+  text-decoration-thickness: 0.18rem;
 }
